@@ -96,7 +96,7 @@ jobs:
             echo "$(cat build_tools/VERSION.txt)+torch${{ matrix.torch-version
             }}cu${{ matrix.cibw-build-torch-cuda-version }}" >
             build_tools/VERSION.txt && python -m pip install -U pip setuptools
-            wheel packaging auditwheel-symbols ninja cmake "numpy<2.0.0" &&
+            wheel packaging auditwheel-symbols ninja cmake "numpy<2.0.0" pybind11 &&
             python -m pip install --no-cache-dir torch==${{ matrix.torch-version
             }} --index-url https://download.pytorch.org/whl/cu${{
             matrix.cibw-build-torch-cuda-version }}
